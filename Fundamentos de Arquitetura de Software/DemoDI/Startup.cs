@@ -1,10 +1,10 @@
-﻿using System;
-using DemoDI.Cases;
+﻿using DemoDI.Cases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace DemoDI
 {
@@ -17,7 +17,7 @@ namespace DemoDI
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public static void ConfigureServices(IServiceCollection services)
         {
             #region Lifecycle
 
@@ -27,20 +27,20 @@ namespace DemoDI
             services.AddSingleton<IOperacaoSingletonInstance>(new Operacao(Guid.Empty));
             services.AddTransient<OperacaoService>();
 
-            #endregion
+            #endregion Lifecycle
 
             #region VidaReal
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteServices, ClienteServices>();
 
-            #endregion
+            #endregion VidaReal
 
             #region Generics
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-            #endregion
+            #endregion Generics
 
             #region MultiplasClasses
 
@@ -51,29 +51,37 @@ namespace DemoDI
             {
                 switch (key)
                 {
-                    case "A":
-                        return serviceProvider.GetService<ServiceA>();
-                    case "B":
-                        return serviceProvider.GetService<ServiceB>();
-                    case "C":
-                        return serviceProvider.GetService<ServiceC>();
+                    case @"A":
+                        {
+                            return serviceProvider.GetService<ServiceA>();
+                        }
+                    case @"B":
+                        {
+                            return serviceProvider.GetService<ServiceB>();
+                        }
+                    case @"C":
+                        {
+                            return serviceProvider.GetService<ServiceC>();
+                        }
                     default:
-                        return null;
+                        {
+                            return null;
+                        }
                 }
             });
 
-            #endregion
+            #endregion MultiplasClasses
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public static void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseStaticFiles();
-            
+
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: @"default", @"{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -7,6 +7,7 @@ namespace DesignPatterns
     {
         // Initializers
         private readonly Calculadora _calculadora = new Calculadora();
+
         private readonly List<Commander> _commands = new List<Commander>();
         private int _total;
 
@@ -21,7 +22,8 @@ namespace DesignPatterns
 
         public void Retornar(int niveis)
         {
-            Console.WriteLine("\n---- Retornando {0} níveis ", niveis);
+            Console.WriteLine(@"
+---- Retornando {0} níveis ", niveis);
 
             for (var i = 0; i < niveis; i++)
             {
@@ -33,7 +35,8 @@ namespace DesignPatterns
 
         public void Desfazer(int niveis)
         {
-            Console.WriteLine("\n---- Desfazendo {0} níveis ", niveis);
+            Console.WriteLine(@"
+---- Desfazendo {0} níveis ", niveis);
 
             for (var i = 0; i < niveis; i++)
             {

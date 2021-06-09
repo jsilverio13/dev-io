@@ -1,6 +1,6 @@
-﻿using System;
-using DemoDI.Cases;
+﻿using DemoDI.Cases;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DemoDI.Controllers
 {
@@ -15,7 +15,7 @@ namespace DemoDI.Controllers
 
         public string Index()
         {
-            return _serviceAccessor("A").Retorno();
+            return _serviceAccessor(@"A").Retorno();
             //return _serviceAccessor("B").Retorno();
             //return _serviceAccessor("C").Retorno();
         }

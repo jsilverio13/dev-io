@@ -4,6 +4,7 @@
     {
         private readonly string _nome;
         private readonly int _voltagem;
+
         protected Eletrodomestico(string nome, int voltagem)
         {
             _nome = nome;
@@ -11,6 +12,7 @@
         }
 
         public abstract void Ligar();
+
         public abstract void Desligar();
 
         public virtual void Testar()

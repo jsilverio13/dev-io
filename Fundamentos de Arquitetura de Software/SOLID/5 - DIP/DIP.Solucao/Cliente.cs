@@ -1,5 +1,4 @@
 ﻿using System;
-using SOLID.DIP.Solucao.Interfaces;
 
 namespace SOLID.DIP.Solucao
 {

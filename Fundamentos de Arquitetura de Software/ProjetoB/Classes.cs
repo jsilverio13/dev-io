@@ -2,23 +2,22 @@
 
 namespace ProjetoB
 {
-    class TesteClasses
+    internal class TesteClasses
     {
         public TesteClasses()
         {
-            var publica = new Publica(); 
+            var publica = new Publica();
             //var privada = new Privada();
             //var interna = new Interna();
             //var abstrata = new Abstrata();
         }
     }
 
-    class TesteModificador1
+    internal class TesteModificador1
     {
         public TesteModificador1()
         {
             var publica = new Publica();
-
             publica.TestePublico();
             //publica.TesteInternal();
             //publica.TesteProtegidoInterno();
@@ -28,7 +27,7 @@ namespace ProjetoB
         }
     }
 
-    class TesteModificador2 : Publica
+    internal class TesteModificador2 : Publica
     {
         public TesteModificador2()
         {
@@ -41,5 +40,3 @@ namespace ProjetoB
         }
     }
 }
-
-

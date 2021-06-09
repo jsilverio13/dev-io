@@ -9,6 +9,7 @@
         }
 
         protected string ConnectionString { get; set; }
+
         public abstract Connection Connect();
     }
 }

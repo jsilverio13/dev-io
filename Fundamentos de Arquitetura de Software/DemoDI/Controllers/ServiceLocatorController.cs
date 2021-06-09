@@ -1,7 +1,7 @@
-﻿using System;
-using DemoDI.Cases;
+﻿using DemoDI.Cases;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace DemoDI.Controllers
 {

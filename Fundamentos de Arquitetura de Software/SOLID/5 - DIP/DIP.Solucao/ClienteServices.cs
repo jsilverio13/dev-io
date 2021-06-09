@@ -8,7 +8,7 @@ namespace SOLID.DIP.Solucao
         private readonly IEmailServices _emailServices;
 
         public ClienteServices(
-            IEmailServices emailServices, 
+            IEmailServices emailServices,
             IClienteRepository clienteRepository)
         {
             _emailServices = emailServices;
@@ -18,13 +18,13 @@ namespace SOLID.DIP.Solucao
         public string AdicionarCliente(Cliente cliente)
         {
             if (!cliente.Validar())
-                return "Dados inválidos";
+                return @"Dados inválidos";
 
             _clienteRepository.AdicionarCliente(cliente);
 
-            _emailServices.Enviar("empresa@empresa.com", cliente.Email.Endereco, "Bem Vindo", "Parabéns está Cadastrado");
+            _emailServices.Enviar(@"empresa@empresa.com", cliente.Email.Endereco, @"Bem Vindo", @"Parabéns está Cadastrado");
 
-            return "Cliente cadastrado com sucesso";
+            return @"Cliente cadastrado com sucesso";
         }
     }
 

@@ -11,19 +11,24 @@ namespace DesignPatterns
             switch (meioPagamento)
             {
                 case MeioPagamento.CartaoCredito:
-                    return new PagamentoCartaoCreditoService(
-                               new PagamentoCartaoCreditoFacade(
-                               new PayPalGateway(),
-                               new ConfigurationManager()));
-
+                    {
+                        return new PagamentoCartaoCreditoService(
+                                  new PagamentoCartaoCreditoFacade(
+                                  new PayPalGateway(),
+                                  new ConfigurationManager()));
+                    }
                 case MeioPagamento.Boleto:
-                    return new PagamentoBoletoService(new PagamentoBoletoFacade());
-
+                    {
+                        return new PagamentoBoletoService(new PagamentoBoletoFacade());
+                    }
                 case MeioPagamento.TransferenciaBancaria:
-                    return new PagamentoTransferenciaService(new PagamentoTransferenciaFacade());
-
+                    {
+                        return new PagamentoTransferenciaService(new PagamentoTransferenciaFacade());
+                    }
                 default:
-                    throw new ApplicationException("Meio de Pagamento não conhecido");
+                    {
+                        throw new ApplicationException(@"Meio de Pagamento não conhecido");
+                    }
             }
         }
     }

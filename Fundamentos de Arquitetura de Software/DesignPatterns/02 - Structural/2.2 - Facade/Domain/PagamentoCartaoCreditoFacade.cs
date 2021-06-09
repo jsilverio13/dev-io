@@ -13,8 +13,8 @@
 
         public bool RealizarPagamento(Pedido pedido, Pagamento pagamento)
         {
-            var apiKey = _configManager.GetValue("apiKey");
-            var encriptionKey = _configManager.GetValue("encriptionKey");
+            var apiKey = _configManager.GetValue(@"apiKey");
+            var encriptionKey = _configManager.GetValue(@"encriptionKey");
 
             var serviceKey = _payPalGateway.GetPayPalServiceKey(apiKey, encriptionKey);
             var cardHashKey = _payPalGateway.GetCardHashKey(serviceKey, pagamento.CartaoCredito);

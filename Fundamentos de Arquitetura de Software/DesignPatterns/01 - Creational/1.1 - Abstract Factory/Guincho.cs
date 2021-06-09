@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.AbstractFactory
 {
-    // AbstractProduct   
+    // AbstractProduct
     public abstract class Guincho
     {
         protected Guincho(Porte porte)
@@ -11,42 +11,49 @@ namespace DesignPatterns.AbstractFactory
         }
 
         public abstract void Socorrer(Veiculo veiculo);
+
         public Porte Porte { get; set; }
     }
 
     // Produto Concreto
     public class GuinchoPequeno : Guincho
     {
-        public GuinchoPequeno(Porte porte) : base(porte) { }
+        public GuinchoPequeno(Porte porte) : base(porte)
+        {
+        }
 
         public override void Socorrer(Veiculo veiculo)
         {
             // Processo de socorro
-            Console.WriteLine("Socorrendo Carro Pequeno - Modelo " + veiculo.Modelo);
+            Console.WriteLine(@"Socorrendo Carro Pequeno - Modelo " + veiculo.Modelo);
         }
     }
 
     // Produto Concreto
     public class GuinchoMedio : Guincho
     {
-        public GuinchoMedio(Porte porte) : base(porte) { }
+        public GuinchoMedio(Porte porte) : base(porte)
+        {
+        }
 
         public override void Socorrer(Veiculo veiculo)
         {
             // Processo de socorro
-            Console.WriteLine("Socorrendo Carro Medio - Modelo " + veiculo.Modelo);
+            Console.WriteLine(@"Socorrendo Carro Medio - Modelo " + veiculo.Modelo);
         }
     }
 
     // Produto Concreto
     public class GuinchoGrande : Guincho
     {
-        public GuinchoGrande(Porte porte) : base(porte) { }
+        public GuinchoGrande(Porte porte) : base(porte)
+        {
+        }
 
         public override void Socorrer(Veiculo veiculo)
         {
             // Processo de socorro
-            Console.WriteLine("Socorrendo Carro Grande - Modelo " + veiculo.Modelo);
+            Console.WriteLine(@"Socorrendo Carro Grande - Modelo " + veiculo.Modelo);
         }
     }
 
@@ -57,13 +64,21 @@ namespace DesignPatterns.AbstractFactory
             switch (porte)
             {
                 case Porte.Pequeno:
-                    return new GuinchoPequeno(porte);
+                    {
+                        return new GuinchoPequeno(porte);
+                    }
                 case Porte.Medio:
-                    return new GuinchoMedio(porte);
+                    {
+                        return new GuinchoMedio(porte);
+                    }
                 case Porte.Grande:
-                    return new GuinchoGrande(porte);
+                    {
+                        return new GuinchoGrande(porte);
+                    }
                 default:
-                    throw new ApplicationException("Porte de Guincho desconhecido.");
+                    {
+                        throw new ApplicationException(@"Porte de Guincho desconhecido.");
+                    }
             }
         }
     }

@@ -10,14 +10,14 @@ namespace OOP
 
     public class Processo
     {
-        public void Execucao()
+        public static void Execucao()
         {
-            var funcionario = new Funcionario()
+            var funcionario = new Funcionario
             {
-                Nome = "João da Silva",
-                DataNascimento = Convert.ToDateTime("1990/01/01"),
+                Nome = @"João da Silva",
+                DataNascimento = Convert.ToDateTime(@"1990/01/01"),
                 DataAdmissao = DateTime.Now,
-                Registro = "0123456",
+                Registro = @"0123456",
             };
 
             funcionario.CalcularIdade();

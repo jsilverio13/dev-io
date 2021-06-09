@@ -7,9 +7,9 @@ namespace SOLID.LSP.Solucao
         private static void ObterAreaParalelogramo(Paralelogramo ret)
         {
             Console.Clear();
-            Console.WriteLine("Calculo da área do Retangulo");
+            Console.WriteLine(@"Calculo da área do Retangulo");
             Console.WriteLine();
-            Console.WriteLine(ret.Altura + " * " + ret.Largura);
+            Console.WriteLine(ret.Altura + @" * " + ret.Largura);
             Console.WriteLine();
             Console.WriteLine(ret.Area);
             Console.ReadKey();
@@ -17,7 +17,7 @@ namespace SOLID.LSP.Solucao
 
         public static void Calcular()
         {
-            var quad = new Quadrado(5,5);
+            var quad = new Quadrado(5, 5);
             var ret = new Retangulo(10, 5);
 
             ObterAreaParalelogramo(quad);

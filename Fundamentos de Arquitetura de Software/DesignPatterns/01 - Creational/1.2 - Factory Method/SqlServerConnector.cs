@@ -12,7 +12,7 @@ namespace DesignPatterns.FactoryMethod
 
         public override Connection Connect()
         {
-            Console.WriteLine("Conectando ao banco SQL Server...");
+            Console.WriteLine(@"Conectando ao banco SQL Server...");
             var connection = new Connection(ConnectionString);
             connection.Open();
 

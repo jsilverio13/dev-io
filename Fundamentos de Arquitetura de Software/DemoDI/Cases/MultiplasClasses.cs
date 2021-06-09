@@ -4,22 +4,28 @@
     {
         string Retorno();
     }
-    public class ServiceA : IService {
+
+    public class ServiceA : IService
+    {
         public string Retorno()
         {
-            return "A";
+            return @"A";
         }
     }
-    public class ServiceB : IService {
+
+    public class ServiceB : IService
+    {
         public string Retorno()
         {
-            return "B";
+            return @"B";
         }
     }
-    public class ServiceC : IService {
+
+    public class ServiceC : IService
+    {
         public string Retorno()
         {
-            return "C";
+            return @"C";
         }
     }
 }

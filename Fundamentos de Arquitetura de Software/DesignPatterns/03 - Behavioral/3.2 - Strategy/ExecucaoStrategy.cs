@@ -9,9 +9,9 @@ namespace DesignPatterns
         {
             var produtos = new List<Produto>
             {
-                new Produto{Nome = "Tenis Adidas", Valor = new Random().Next(500)},
-                new Produto{Nome = "Camisa Boliche", Valor = new Random().Next(500)},
-                new Produto{Nome = "Raquete Tenis", Valor = new Random().Next(500)}
+                new Produto{Nome = @"Tenis Adidas", Valor = new Random().Next(500)},
+                new Produto{Nome = @"Camisa Boliche", Valor = new Random().Next(500)},
+                new Produto{Nome = @"Raquete Tenis", Valor = new Random().Next(500)}
             };
 
             var pedido = new Pedido
@@ -23,7 +23,7 @@ namespace DesignPatterns
             var meioPagamentoCredito = new Pagamento
             {
                 MeioPagamento = MeioPagamento.CartaoCredito,
-                CartaoCredito = "5555 2222 5555 9999"
+                CartaoCredito = @"5555 2222 5555 9999"
             };
 
             var meioPagamentoBoleto = new Pagamento
@@ -34,7 +34,7 @@ namespace DesignPatterns
             var meioPagamentoTransferencia = new Pagamento
             {
                 MeioPagamento = MeioPagamento.TransferenciaBancaria,
-                CartaoCredito = "5555 2222 5555 9999"
+                CartaoCredito = @"5555 2222 5555 9999"
             };
 
             #region Forma Simples
@@ -47,7 +47,7 @@ namespace DesignPatterns
             var pagamentoCredito = pedidoCredito.RealizarPagamento(pedido, meioPagamentoCredito);
             Console.WriteLine(pagamentoCredito.Status);
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine(@"-------------------------------------------------------");
 
             var pedidoBoleto = new PedidoService(
                                    new PagamentoBoletoService(
@@ -56,7 +56,7 @@ namespace DesignPatterns
             var pagamentoBoleto = pedidoBoleto.RealizarPagamento(pedido, meioPagamentoBoleto);
             Console.WriteLine(pagamentoBoleto.Status);
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine(@"-------------------------------------------------------");
 
             var pedidoTransferencia = new PedidoService(
                                           new PagamentoTransferenciaService(
@@ -65,9 +65,9 @@ namespace DesignPatterns
             var pagamentoTransferencia = pedidoTransferencia.RealizarPagamento(pedido, meioPagamentoBoleto);
             Console.WriteLine(pagamentoTransferencia.Status);
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine(@"-------------------------------------------------------");
 
-            #endregion
+            #endregion Forma Simples
 
             #region Forma Elegante
 
@@ -75,19 +75,19 @@ namespace DesignPatterns
             var pagamentoCredito2 = pedidoCredito2.RealizarPagamento(pedido, meioPagamentoCredito);
             Console.WriteLine(pagamentoCredito2.Status);
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine(@"-------------------------------------------------------");
 
             var pedidoBoleto2 = new PedidoService(PagamentoFactory.CreatePagamento(meioPagamentoBoleto.MeioPagamento));
             var pagamentoBoleto2 = pedidoBoleto2.RealizarPagamento(pedido, meioPagamentoBoleto);
             Console.WriteLine(pagamentoBoleto2.Status);
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine(@"-------------------------------------------------------");
 
             var pedidoTransferencia2 = new PedidoService(PagamentoFactory.CreatePagamento(meioPagamentoTransferencia.MeioPagamento));
             var pagamentoTransferencia2 = pedidoTransferencia2.RealizarPagamento(pedido, meioPagamentoTransferencia);
             Console.WriteLine(pagamentoTransferencia2.Status);
 
-            #endregion
+            #endregion Forma Elegante
         }
     }
 }

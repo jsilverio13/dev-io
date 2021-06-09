@@ -24,13 +24,21 @@ namespace DesignPatterns.AbstractFactory
             switch (veiculo.Porte)
             {
                 case Porte.Pequeno:
-                    return new AutoSocorro(new SocorroVeiculoPequenoFactory(), veiculo);
+                    {
+                        return new AutoSocorro(new SocorroVeiculoPequenoFactory(), veiculo);
+                    }
                 case Porte.Medio:
-                    return new AutoSocorro(new SocorroVeiculoMedioFactory(), veiculo);
+                    {
+                        return new AutoSocorro(new SocorroVeiculoMedioFactory(), veiculo);
+                    }
                 case Porte.Grande:
-                    return new AutoSocorro(new SocorroVeiculoGrandeFactory(), veiculo);
+                    {
+                        return new AutoSocorro(new SocorroVeiculoGrandeFactory(), veiculo);
+                    }
                 default:
-                    throw new ApplicationException("Não foi possível identificar o veículo");
+                    {
+                        throw new ApplicationException(@"Não foi possível identificar o veículo");
+                    }
             }
         }
     }

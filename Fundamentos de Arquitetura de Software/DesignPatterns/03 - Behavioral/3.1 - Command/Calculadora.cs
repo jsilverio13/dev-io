@@ -10,12 +10,27 @@ namespace DesignPatterns
         {
             switch (operador)
             {
-                case '+': _valorAtual += valor; break;
-                case '-': _valorAtual -= valor; break;
-                case '*': _valorAtual *= valor; break;
-                case '/': _valorAtual /= valor; break;
+                case '+':
+                    {
+                        _valorAtual += valor; break;
+                    }
+                case '-':
+                    {
+                        _valorAtual -= valor; break;
+                    }
+                case '*':
+                    {
+                        _valorAtual *= valor; break;
+                    }
+                case '/':
+                    {
+                        _valorAtual /= valor; break;
+                    }
+
+                default:
+                    throw new Exception("Unexpected Case");
             }
-            Console.WriteLine("(dado {1} {2}) - Valor atual = {0,3}", _valorAtual, operador, valor);
+            Console.WriteLine(@"(dado {1} {2}) - Valor atual = {0,3}", _valorAtual, operador, valor);
         }
     }
 }

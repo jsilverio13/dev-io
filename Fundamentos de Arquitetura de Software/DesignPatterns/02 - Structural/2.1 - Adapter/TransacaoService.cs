@@ -13,7 +13,7 @@
         public void RealizarTransacao()
         {
             // Transação
-            _logger.Log("Transação realizada");
+            _logger.Log(@"Transação realizada");
         }
     }
 }

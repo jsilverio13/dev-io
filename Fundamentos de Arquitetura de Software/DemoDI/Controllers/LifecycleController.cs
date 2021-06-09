@@ -1,6 +1,6 @@
-﻿using System;
-using DemoDI.Cases;
+﻿using DemoDI.Cases;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace DemoDI.Controllers
 {
@@ -18,7 +18,7 @@ namespace DemoDI.Controllers
         public string Index()
         {
             return
-                "Primeira instância: " + Environment.NewLine +
+                @"Primeira instância: " + Environment.NewLine +
                 OperacaoService.Transient.OperacaoId + Environment.NewLine +
                 OperacaoService.Scoped.OperacaoId + Environment.NewLine +
                 OperacaoService.Singleton.OperacaoId + Environment.NewLine +
@@ -27,7 +27,7 @@ namespace DemoDI.Controllers
                 Environment.NewLine +
                 Environment.NewLine +
 
-                "Segunda instância: " + Environment.NewLine +
+                @"Segunda instância: " + Environment.NewLine +
                 OperacaoService2.Transient.OperacaoId + Environment.NewLine +
                 OperacaoService2.Scoped.OperacaoId + Environment.NewLine +
                 OperacaoService2.Singleton.OperacaoId + Environment.NewLine +

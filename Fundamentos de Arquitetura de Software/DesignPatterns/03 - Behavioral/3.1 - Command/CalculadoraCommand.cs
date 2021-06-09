@@ -39,11 +39,26 @@ namespace DesignPatterns
         {
             switch (operador)
             {
-                case '+': return '-';
-                case '-': return '+';
-                case '*': return '/';
-                case '/': return '*';
-                default: throw new ArgumentException("Operador desconhecido");
+                case '+':
+                    {
+                        return '-';
+                    }
+                case '-':
+                    {
+                        return '+';
+                    }
+                case '*':
+                    {
+                        return '/';
+                    }
+                case '/':
+                    {
+                        return '*';
+                    }
+                default:
+                    {
+                        throw new ArgumentException(@"Operador desconhecido");
+                    }
             }
         }
     }

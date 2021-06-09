@@ -21,19 +21,19 @@ namespace OOP
         {
             var pessoaHeranca = new PessoaFisica
             {
-                Nome = "Joao",
+                Nome = @"Joao",
                 DataNascimento = DateTime.Now,
-                Cpf = "32165498765"
+                Cpf = @"32165498765"
             };
 
             var pessoaComposicao = new PessoaFisica2
             {
                 Pessoa = new Pessoa
                 {
-                    Nome = "Joao",
+                    Nome = @"Joao",
                     DataNascimento = DateTime.Now,
                 },
-                Cpf = "32165498765"
+                Cpf = @"32165498765"
             };
 
             var nomeHeranca = pessoaHeranca.Nome;
@@ -41,7 +41,7 @@ namespace OOP
         }
     }
 
-    #endregion
+    #endregion Caso 1
 
     #region Caso 2
 
@@ -61,18 +61,15 @@ namespace OOP
     {
         public void Adicionar(T obj)
         {
-
         }
 
         public void Excluir(T obj)
         {
-
         }
     }
 
     public class RepositorioHerancaPessoa : Repositorio<Pessoa>, IRepositorioPessoa
     {
-
     }
 
     public class RepositorioComposicaoPessoa : IRepositorioPessoa
@@ -103,5 +100,5 @@ namespace OOP
         }
     }
 
-    #endregion
+    #endregion Caso 2
 }

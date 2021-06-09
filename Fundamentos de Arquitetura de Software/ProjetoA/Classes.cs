@@ -1,33 +1,50 @@
-﻿using System.Runtime.CompilerServices;
-
-//[assembly: InternalsVisibleTo("ProjetoB")]
+﻿//[assembly: InternalsVisibleTo("ProjetoB")]
 namespace ProjetoA
 {
     #region Classes
 
     public class Publica
     {
-        public void TestePublico() { }
-        private void TestePrivado() { }
-        internal void TesteInternal() { }
-        protected void TesteProtegido() { }
-        private protected void TestePrivadoProtegido() { }
-        protected internal void TesteProtegidoInterno() { }
+        public void TestePublico()
+        {
+        }
+
+        private void TestePrivado()
+        {
+        }
+
+        internal void TesteInternal()
+        {
+        }
+
+        protected void TesteProtegido()
+        {
+        }
+
+        private protected void TestePrivadoProtegido()
+        {
+        }
+
+        protected internal void TesteProtegidoInterno()
+        {
+        }
     }
 
     public sealed class Selada { }
 
-    class Privada { }
+    internal class Privada
+    { }
 
     internal class Interna { }
 
-    abstract class Abstrata { }
+    internal abstract class Abstrata
+    { }
 
-    #endregion
-    
+    #endregion Classes
+
     #region Testes
 
-    class TesteClasses
+    internal class TesteClasses
     {
         public TesteClasses()
         {
@@ -40,12 +57,11 @@ namespace ProjetoA
 
     //class TesteSelada : Selada { }
 
-    class TesteModificador1
+    internal class TesteModificador1
     {
         public TesteModificador1()
         {
             var publica = new Publica();
-
             publica.TestePublico();
             publica.TesteInternal();
             publica.TesteProtegidoInterno();
@@ -55,7 +71,7 @@ namespace ProjetoA
         }
     }
 
-    class TesteModificador2 : Publica
+    internal class TesteModificador2 : Publica
     {
         public TesteModificador2()
         {
@@ -68,7 +84,7 @@ namespace ProjetoA
         }
     }
 
-    #endregion
+    #endregion Testes
 }
 
 /*******************************************************/

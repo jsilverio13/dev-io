@@ -12,7 +12,7 @@ namespace SOLID.DIP.Violacao
                 Port = 25,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Host = "smtp.google.com"
+                Host = @"smtp.google.com"
             };
 
             mail.Subject = assunto;

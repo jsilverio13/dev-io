@@ -1,5 +1,4 @@
-﻿
-namespace DemoDI.Cases
+﻿namespace DemoDI.Cases
 {
     public interface IGenericRepository<T> where T : class
     {

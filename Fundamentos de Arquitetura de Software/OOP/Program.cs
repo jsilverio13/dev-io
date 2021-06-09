@@ -2,33 +2,46 @@
 
 namespace OOP
 {
-    class Program
+    public static class Program
     {
-        static void Main()
+        private static void Main()
         {
-            Console.WriteLine("Escolha a operação:");
-            Console.WriteLine("");
-            Console.WriteLine("1 - Encapsulamento");
-            Console.WriteLine("2 - Heranca Composicao 1");
-            Console.WriteLine("3 - Heranca Composicao 2");
-            Console.WriteLine("4 - Interface Implementacao");
+            Console.WriteLine(@"Escolha a operação:");
+            Console.WriteLine(@"");
+            Console.WriteLine(@"1 - Encapsulamento");
+            Console.WriteLine(@"2 - Heranca Composicao 1");
+            Console.WriteLine(@"3 - Heranca Composicao 2");
+            Console.WriteLine(@"4 - Interface Implementacao");
 
             var opcao = Console.ReadKey();
 
             switch (opcao.KeyChar)
             {
                 case '1':
-                    new AutomacaoCafe().ServirCafe();
-                    break;
+                    {
+                        AutomacaoCafe.ServirCafe();
+                        break;
+                    }
                 case '2':
-                    new TestesHerancaComposicao();
-                    break;
+                    {
+                        new TestesHerancaComposicao();
+                        break;
+                    }
                 case '3':
-                    new TestesHerancaComposicao2();
-                    break;
+                    {
+                        new TestesHerancaComposicao2();
+                        break;
+                    }
                 case '4':
-                    new TesteInterfaceImplementacao();
-                    break;
+                    {
+                        new TesteInterfaceImplementacao();
+                        break;
+                    }
+
+                default:
+                    {
+                        throw new Exception(@"Unexpected Case");
+                    }
             }
 
             Main();

@@ -12,7 +12,7 @@ namespace DesignPatterns.FactoryMethod
 
         public override Connection Connect()
         {
-            Console.WriteLine("Conectando ao banco Oracle...");
+            Console.WriteLine(@"Conectando ao banco Oracle...");
             var connection = new Connection(ConnectionString);
             connection.Open();
 

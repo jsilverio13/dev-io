@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.AbstractFactory
 {
-    // AbstractProduct  
+    // AbstractProduct
     public abstract class Veiculo
     {
         protected Veiculo(string modelo, Porte porte)
@@ -13,7 +13,6 @@ namespace DesignPatterns.AbstractFactory
 
         public string Modelo { get; set; }
         public Porte Porte { get; set; }
-
     }
 
     public enum Porte
@@ -54,14 +53,22 @@ namespace DesignPatterns.AbstractFactory
             switch (porte)
             {
                 case Porte.Pequeno:
-                    return new VeiculoPequeno(modelo, porte);
+                    {
+                        return new VeiculoPequeno(modelo, porte);
+                    }
                 case Porte.Medio:
-                    return new VeiculoMedio(modelo, porte);
+                    {
+                        return new VeiculoMedio(modelo, porte);
+                    }
                 case Porte.Grande:
-                    return new VeiculoGrande(modelo, porte);
+                    {
+                        return new VeiculoGrande(modelo, porte);
+                    }
                 default:
-                    throw new ApplicationException("Porte de veiculo desconhecido.");
+                    {
+                        throw new ApplicationException(@"Porte de veiculo desconhecido.");
+                    }
             }
         }
     }
-}   
+}

@@ -6,9 +6,7 @@ namespace SOLID.DIP.Solucao
     {
         public void AdicionarCliente(Cliente cliente)
         {
-
             // Usar outra forma de ir até o BD
-
         }
     }
 }

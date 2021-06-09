@@ -10,12 +10,12 @@ namespace DesignPatterns.FactoryMethod
 
         public static DbFactory Database(DataBase dataBase)
         {
-            if(dataBase == DataBase.SqlServer)
+            if (dataBase == DataBase.SqlServer)
                 return new SqlFactory();
-            if(dataBase == DataBase.Oracle)
+            if (dataBase == DataBase.Oracle)
                 return new OracleFactory();
 
-            throw new ApplicationException("Banco de dados não reconhecido.");
+            throw new ApplicationException(@"Banco de dados não reconhecido.");
         }
     }
 }

@@ -5,7 +5,7 @@ namespace DemoDI.Controllers
 {
     public class FromServicesController : Controller
     {
-        public void Index([FromServices] IClienteServices clienteServices)
+        public static void Index([FromServices] IClienteServices clienteServices)
         {
             clienteServices.AdicionarCliente(new Cliente());
         }

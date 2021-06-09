@@ -1,5 +1,5 @@
-using System.Net.Mail;
 using SOLID.DIP.Solucao.Interfaces;
+using System.Net.Mail;
 
 namespace SOLID.DIP.Solucao
 {
@@ -13,7 +13,7 @@ namespace SOLID.DIP.Solucao
                 Port = 25,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Host = "smtp.google.com"
+                Host = @"smtp.google.com"
             };
 
             mail.Subject = assunto;

@@ -1,6 +1,6 @@
-﻿using System;
-//using SOLID.LSP.Violacao;
+﻿//using SOLID.LSP.Violacao;
 using SOLID.OCP.Solucao_Extension_Methods;
+using System;
 using CalculoArea = SOLID.LSP.Solucao.CalculoArea;
 
 namespace SOLID
@@ -9,20 +9,27 @@ namespace SOLID
     {
         private static void Main()
         {
-            Console.WriteLine("Escolha a operação");
-            Console.WriteLine("1 - OCP");
-            Console.WriteLine("2 - LSP");
+            Console.WriteLine(@"Escolha a operação");
+            Console.WriteLine(@"1 - OCP");
+            Console.WriteLine(@"2 - LSP");
 
             var opcao = Console.ReadKey();
 
             switch (opcao.KeyChar)
             {
                 case '1':
-                    CaixaEletronico.Operacoes();
-                    break;
+                    {
+                        CaixaEletronico.Operacoes();
+                        break;
+                    }
                 case '2':
-                    CalculoArea.Calcular();
-                    break;
+                    {
+                        CalculoArea.Calcular();
+                        break;
+                    }
+
+                default:
+                    throw new Exception("Unexpected Case");
             }
         }
     }

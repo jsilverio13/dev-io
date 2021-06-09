@@ -15,11 +15,10 @@ namespace DesignPatterns
         public Pagamento RealizarPagamento(Pedido pedido, Pagamento pagamento)
         {
             pagamento.Valor = pedido.Produtos.Sum(p => p.Valor);
-            Console.WriteLine("Iniciando Pagamento via Boleto - Valor R$ " + pagamento.Valor);
-
+            Console.WriteLine(@"Iniciando Pagamento via Boleto - Valor R$ " + pagamento.Valor);
 
             pagamento.LinhaDigitavelBoleto = _pagamentoBoletoFacade.GerarBoleto();
-            pagamento.Status = "Aguardando Pagamento";
+            pagamento.Status = @"Aguardando Pagamento";
             return pagamento;
         }
     }

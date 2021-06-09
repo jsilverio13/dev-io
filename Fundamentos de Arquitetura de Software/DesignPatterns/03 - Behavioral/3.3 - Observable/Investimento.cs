@@ -16,6 +16,7 @@ namespace DesignPatterns
         }
 
         public string Simbolo { get; }
+
         public decimal Valor
         {
             get => _valor;
@@ -27,7 +28,6 @@ namespace DesignPatterns
                 Notificar();
             }
         }
-
 
         public void Subscribe(IObservador observador)
         {
@@ -48,7 +48,7 @@ namespace DesignPatterns
                 investor.Notificar(this);
             }
 
-            Console.WriteLine("");
+            Console.WriteLine(@"");
         }
     }
 }

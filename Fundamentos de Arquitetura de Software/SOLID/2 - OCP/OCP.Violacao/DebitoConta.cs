@@ -2,7 +2,7 @@
 {
     public class DebitoConta
     {
-        public void Debitar(decimal valor, string conta, TipoConta tipoConta)
+        public static void Debitar(decimal valor, string conta, TipoConta tipoConta)
         {
             if (tipoConta == TipoConta.Corrente)
             {

@@ -6,7 +6,7 @@ namespace SOLID.DIP.Violacao
 
         public bool Validar()
         {
-            return Endereco.Contains("@");
+            return Endereco.Contains(@"@");
         }
     }
 }

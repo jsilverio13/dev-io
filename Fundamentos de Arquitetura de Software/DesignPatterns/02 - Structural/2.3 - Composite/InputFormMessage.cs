@@ -10,6 +10,7 @@ namespace DesignPatterns
         {
             Nome = name;
         }
+
         public void ExibirMensagens(int sub)
         {
             Console.WriteLine(new string('-', sub) + Nome);

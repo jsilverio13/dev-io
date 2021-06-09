@@ -1,6 +1,5 @@
 ﻿namespace DesignPatterns
 {
-
     // Concrete Subject
     public class PapelBovespa : Investimento
     {

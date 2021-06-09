@@ -6,7 +6,7 @@ namespace SOLID.DIP.Solucao
 
         public bool Validar()
         {
-            return Endereco.Contains("@");
+            return Endereco.Contains(@"@");
         }
     }
 }

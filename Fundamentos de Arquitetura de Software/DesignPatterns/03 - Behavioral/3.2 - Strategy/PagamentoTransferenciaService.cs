@@ -15,10 +15,10 @@ namespace DesignPatterns
         public Pagamento RealizarPagamento(Pedido pedido, Pagamento pagamento)
         {
             pagamento.Valor = pedido.Produtos.Sum(p => p.Valor);
-            Console.WriteLine("Iniciando Pagamento via Transferência - Valor R$ " + pagamento.Valor);
+            Console.WriteLine(@"Iniciando Pagamento via Transferência - Valor R$ " + pagamento.Valor);
 
             pagamento.ConfirmacaoTransferencia = _pagamentoTransferenciaFacade.RealizarTransferencia();
-            pagamento.Status = "Pago via Transferência";
+            pagamento.Status = @"Pago via Transferência";
             return pagamento;
         }
     }

@@ -9,7 +9,7 @@
         }
 
         public double Altura { get; private set; }
-        public double Largura { get; private set ; }
-        public double Area { get { return Altura * Largura; } } 
+        public double Largura { get; private set; }
+        public double Area { get { return Altura * Largura; } }
     }
 }

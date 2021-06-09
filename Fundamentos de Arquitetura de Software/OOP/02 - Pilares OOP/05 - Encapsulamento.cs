@@ -1,9 +1,8 @@
-﻿
-namespace OOP
+﻿namespace OOP
 {
     public class AutomacaoCafe
     {
-        public void ServirCafe()
+        public static void ServirCafe()
         {
             var espresso = new CafeteiraEspressa();
             espresso.Ligar();

@@ -12,20 +12,20 @@ namespace DesignPatterns.FactoryMethod
             ConnectionString = connectionString;
         }
 
-        public void ExecuteCommand(string command)
+        public static void ExecuteCommand(string command)
         {
-            Console.WriteLine("Executando Commando: " + command);
+            Console.WriteLine(@"Executando Commando: " + command);
         }
 
         public void Open()
         {
             Opened = true;
-            Console.WriteLine("Conexão aberta");
+            Console.WriteLine(@"Conexão aberta");
         }
 
-        public void Close()
+        public static void Close()
         {
-            Console.WriteLine("Conexão fechada");
+            Console.WriteLine(@"Conexão fechada");
         }
     }
 }
