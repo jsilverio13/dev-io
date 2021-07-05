@@ -14,6 +14,7 @@
 	  <None Include="Views\Home\Index.cshtml" />
 	  <None Include="Views\Home\Privacy.cshtml" />
 	  <None Include="Views\Shared\Error.cshtml" />
+	  <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
 	  <None Include="Views\Shared\_Layout.cshtml" />
 	  <None Include="Views\Shared\_LoginPartial.cshtml" />
 	  <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
@@ -22,7 +23,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
@@ -36,9 +36,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\EventSourcing\EventSourcing\EventSourcing.csproj" />
 		<ProjectReference Include="..\NerdStore.Catalogo.Application\NerdStore.Catalogo.Application.csproj" />
 		<ProjectReference Include="..\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj" />
 		<ProjectReference Include="..\NerdStore.Catalogo.Domain\NerdStore.Catalogo.Domain.csproj" />
 		<ProjectReference Include="..\NerdStore.Core\NerdStore.Core.csproj" />
+		<ProjectReference Include="..\NerdStore.Pagamentos.AntiCorruption\NerdStore.Pagamentos.AntiCorruption.csproj" />
+		<ProjectReference Include="..\NerdStore.Pagamentos.Business\NerdStore.Pagamentos.Business.csproj" />
+		<ProjectReference Include="..\NerdStore.Pagamentos.Data\NerdStore.Pagamentos.Data.csproj" />
+		<ProjectReference Include="..\NerdStore.Vendas.Application\NerdStore.Vendas.Application.csproj" />
+		<ProjectReference Include="..\NerdStore.Vendas.Data\NerdStore.Vendas.Data.csproj" />
 	</ItemGroup>
 </Project>

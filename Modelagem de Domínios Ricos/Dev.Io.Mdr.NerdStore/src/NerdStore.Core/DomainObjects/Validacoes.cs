@@ -47,7 +47,7 @@ namespace NerdStore.Core.DomainObjects
                 throw new DomainException(mensagem);
             }
         }
-
+        
         public static void ValidarSeVazio(string valor, string mensagem)
         {
             if (valor == null || valor.Trim().Length == 0)
